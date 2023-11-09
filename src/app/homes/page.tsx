@@ -8,9 +8,10 @@ import { v4 as uuidv4 } from 'uuid';
 type MenuMapping = {
   'TOP':string,
   '現在地の天気': string,
-  '3時間毎の傘予報': string,
+  '3時間毎の天気': string,
   '5日間天気予報': string,
   '気象アドバイス': string,
+  '投稿':string,
   'お気に入りの地域': string,
   'プロフィール': string,
   'ログアウト': string
@@ -18,13 +19,14 @@ type MenuMapping = {
 
 const menuSidebar: MenuMapping = {
   "TOP": 'homes/',
-  "現在地の天気": '/current-weather',
-  '3時間毎の傘予報': '/hourly-forecast',
-  '5日間天気予報': '/5-day-forecast',
-  '気象アドバイス': '/weather-advice',
-  'お気に入りの地域': '/favorite-locations',
-  'プロフィール': '/profile',
-  'ログアウト': '/logout'
+  "現在地の天気": '/homes/current-weather',
+  '3時間毎の天気': '/homes/hourly-forecast',
+  '5日間天気予報': '/homes/5-day-forecast',
+  '気象アドバイス': '/homes/weather-advice',
+  '投稿':'/homes/post',
+  'お気に入りの地域': '/homes/favorite-locations',
+  'プロフィール': '/homes/profile',
+  'ログアウト': '/homes/logout'
 };
 
 type WeatherIconType = {
@@ -32,9 +34,9 @@ type WeatherIconType = {
 };
 
 const weatherIcons: WeatherIconType = {
-  晴れ:<FontAwesomeIcon icon={faSun} className='text-yellow-400'/>,
+  晴:<FontAwesomeIcon icon={faSun} className='text-yellow-400'/>,
   雨:<FontAwesomeIcon icon={faUmbrella} className='text-blue-400'/>,
-  曇り:<FontAwesomeIcon icon={faCloud} className='text-gray-400'/>,
+  曇:<FontAwesomeIcon icon={faCloud} className='text-gray-400'/>,
   雪:<FontAwesomeIcon icon={faSnowflake} className='text-white'/>
 };
 
@@ -46,7 +48,7 @@ type HourlyDateType = {
 };
 
 const hourlyDate: HourlyDateType ={
-  天気: ['晴れ', '雨', '曇り', '晴れ', '晴れ', '雪', '雨', '晴れ'],
+  天気: ['晴', '雨', '曇', '晴', '晴', '雪', '雨', '晴'],
   気温:['20°C', '18°C', '19°C', '21°C', '25°C', '24°C', '23°C', '22°C'],
   降水量:['0mm', '1mm', '0mm', '0mm', '2mm', '3mm', '1mm', '0mm'],
   風速:['5km/h', '6km/h', '5km/h', '7km/h', '6km/h', '5km/h', '8km/h', '6km/h']
@@ -54,7 +56,7 @@ const hourlyDate: HourlyDateType ={
 
 const weeklyWeather = {
   日付: ['10/10', '10/11', '10/12', '10/13', '10/14'],
-  天気: ['晴れ', '雪', '曇り', '晴れ', '雨'],
+  天気: ['晴', '雪', '曇', '晴', '雨'],
   最高気温: ['25°C', '24°C', '24°C', '24°C', '24°C'],
   最低気温: ['10°C', '12°C', '11°C', '15°C', '16°C'],
   降水量: ['0mm', '1mm', '0mm', '0mm', '2mm']
@@ -62,7 +64,7 @@ const weeklyWeather = {
 
 const tableData = {
   categories:['', '札幌', '仙台', '東京', '名古屋', '金沢', '大阪', '広島', '福岡', '沖縄'],
-  天気:['天気', '晴れ', '雪', '曇り', '晴れ', '雨', '晴れ', '雪', '曇り', '晴れ'],
+  天気:['天気', '晴', '雪', '曇', '晴', '雨', '晴', '雪', '曇', '晴'],
   最高気温:['最高気温','25°C', '24°C', '24°C', '24°C', '24°C','25°C', '24°C', '24°C', '24°C'],
   最低気温:['最低気温','10°C', '12°C', '11°C', '15°C', '16°C','10°C', '12°C', '11°C', '15°C'],
   降水量:['降水量','0mm', '1mm', '0mm', '0mm', '2mm', '3mm', '1mm', '0mm','0mm']
