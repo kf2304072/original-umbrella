@@ -23,10 +23,10 @@ const menuSidebar: MenuMapping = {
   '3時間毎の天気': '/homes/hourly-forecast',
   '5日間天気予報': '/homes/5-day-forecast',
   '気象アドバイス': '/homes/weather-advice',
-  '投稿':'/homes/post',
+  '投稿':'/homes/posting',
   'お気に入りの地域': '/homes/favorite-locations',
   'プロフィール': '/homes/profile',
-  'ログアウト': '/homes/logout'
+  'ログアウト': '/'
 };
 
 type WeatherIconType = {
