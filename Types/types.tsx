@@ -22,12 +22,12 @@ export const menuSidebar: MenuMapping = {
   'ログアウト': '/homes/logout'
 };
 
-export interface Weather {
+export type Weather = {
   main:string;
   icon:string
 };
 
-export interface ForecastItem {
+export type ForecastItem = {
   dt:number;
     temp: {
       day:number
@@ -38,17 +38,25 @@ export interface ForecastItem {
     weather:Weather[]
 };
 
-export interface UserProfile {
+export type UserProfile= {
   id:string;
   username: string;
   imageUrl: string;
   selfIntroduction: string;
 };
 
-
 export type ProfileModalProps = {
   isOpen:boolean;
   profile:UserProfile;
   onSave:(profile: UserProfile) =>void;
   onClose:() =>void;
+};
+
+export type WeatherData = {
+  date:string;
+  city:string;
+  iconUrl: string;
+  description:string;
+  tempMax:string;
+  tempMin:string
 };

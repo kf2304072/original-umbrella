@@ -1,20 +1,29 @@
-interface ModalProps {
+import React from 'react';
+import { useState } from 'react';
+
+
+type ModalProps = {
   isOpen:boolean;
-  onClose:() => void;
-  children:React.ReactNode;
+  onClose:() =>void;
 };
 
-const Modal:React.FC<ModalProps> = ({isOpen, onClose, children}) =>{
-  if(!isOpen) return null;
+const Modal:React.FC<ModalProps> = ({isOpen, onClose }) => {
+
+  const [postContent, setPostContent] = useState<string>("");
+  const [postImage, setPostImage] =useState<File | null>(null);
+
+  const handlePost = async() =>{
+    
+  };
 
   return (
-    <div className="modal-backdrop">
-      <div className="modal-content">
-        {children}
-        <button onClick={onClose}>Close</button>
-      </div>
+
+    <div>
+
     </div>
-  );
-};
+  )
+}
+
+
 
 export default Modal;
